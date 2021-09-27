@@ -112,3 +112,36 @@ Questions :
 
 . Un tricératops vient d'arriver aujourd'hui. Il est exposé dans le grand hall.
 Faites un programme permettant de mettre à jour les tables pour ajouter ces données.
+
+. Refactorez le code de telle façon à ce que l'on puisse offrir aux utilisateurs des possibilités 
+
+.. d'ajout de salles/oeuvres/déplacements
+.. de récupération de l'ensemble des déplacements pour une oeuvre donnée
+.. de récupérer toutes les oeuvres exposées dans une salle à une date donnée. 
+
+
+
+
+
+
+== Exercice 4 - autre cas d'étude
+
+
+Nous voulons mettre en place une application pour la saisie de notes à l'université. Les étudiants sont identifiés par leur numéro d'étudiant. Ils sont inscrits dans une filière pour une année universitaire donnée. 
+Chaque filière est composée de deux semestres et chaque semestre est composé d'un certains nombre de modules. Un module a un libellé et un certain nombres d'ECTS. 
+
+
+* Nous voulons faire une application permettant aux responsables de modules d'envoyer les notes obtenues par les étudiants dans leurs modules. 
+* Lorsque toutes les notes sont saisies, nous voulons être capable d'extraire le PV de chaque semestre pour l'ensemble de la promotion
+* Nous voulons pouvoir extraire l'ensemble des notes d'un étudiant donné
+
+
+
+
+
+Questions : 
+
+
+. Proposez un modèle relationnel permettant de capturer l'ensemble des données de notre cas d'étude. 
+. Créez cette base de données sous MySQL
+. Développez une façade Java et un modèle en Java qui proposeront les fonctionnalités vues précédemment

@@ -116,12 +116,66 @@ head(states)
 
 # a)
 states[1:10,]
+head(states, 10)
 
 # b)
-states[-5:-0,]
+tail(states, 5)
+
 
 # c)
 states[1:5,c(1,6,10)]
+states[1:5,c("Etat","Meurtre","Region")]
+
+
+# d)
+intersect(states$Etat[states$Revenu > 4500], states$Etat[states$Region == "South"])
+
+# cmd Thb mais ne retourne pas chez moi...
+states[states["Etat"]=="South" & states["Revenu"]>4500,]
+
+
+# Exercice 7
+
+# a)
+
+# cree var avec les revenus en €
+RevenuE <- states$Revenu * 0.8
+
+# copie du tab states et ajoute une col avec la col revenuE
+statesE <- states
+statesE$RevenuE <- RevenuE
+statesE
+
+# b)
+rg <- factor(states$Region,
+       levels = c("North_Central", "Northeast", "South", "West"),
+       labels = c("NC", "NE", "S", "W")
+)
+rg
+
+# c)
+fd <- cut(states$Diplome, breaks = c(min(states$Diplome),47,57,max(states$Diplome)), labels = c("faible","moyen","fort"),
+    include.lowest = TRUE, right = TRUE, dig.lab = 3, ordered_result = FALSE)
+fd
+table(fd)
+
+
+# d)
+
+tab <- data.frame(RevenuE,states$Meurtre,rg,fd)
+tab
+
+
+# Execice 8
+
+# a)
+tab[tab["rg"]=="S" & tab["fd"]=="moyen",]
+
+# b)
+tab[tab["rg"]=="NC" & tab["RevenuE"]>4000,]
+
+
+
 
 
 

@@ -98,7 +98,14 @@ db.publis.distinct("authors")
 &nbsp;
 #### 11)
 ```bash
-db.publis.aggregate([{$match : {title : {$regex :"database", $options: "i"}, booktitle : {$exists : true}, "pages.start" : {$exists : true}}}, {$sort : {booktitle:1, "pages.start":1}}])
+db.publis.aggregate( [
+    {
+        $match : {title : {$regex :"database", $options: "i"}, booktitle : {$exists : true}, "pages.start" : {$exists : true}}
+    }, 
+    {
+        $sort : {booktitle:1, "pages.start":1}
+    }
+])
 ```
 
 &nbsp;
@@ -204,5 +211,25 @@ db.publis.aggregate( [
 &nbsp;
 #### 18)
 ```bash
-
+# correction
+db.publis.aggregate( [
+    {
+        $match: { publisher : {$exists : true} }
+    },
+    {
+        $group: {
+            _id : { year : "$year", publisher: "$publisher"},
+            "nb" : { $sum : 1 }
+        }
+    },
+    {
+        $group: {
+            _id : "$_id.publisher",
+            "moy" : { $avg : "$nb" }
+        }
+    },
+    {
+      $sort : { "moy" : -1}
+    }
+] ) 
 ```

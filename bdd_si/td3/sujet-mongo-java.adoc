@@ -1,0 +1,81 @@
+= TP 3 - Mongo & Java
+
+== (re)-Démarrage de mongoDB
+
+Pour lancer une *nouvelle* instance d'un serveur mongoDB avec Docker, taper dans un terminal :
+----
+docker run --name mongoserver -d mongo
+----
+Ceci permet de récupérer une image `mongo:latest` si elle n'est pas déjà présente en local
+sur l'ordinateur puis de lancer un serveur facade dans un conteneur nommé `mongoserver`.
+
+Si vous avez un message d'erreur
+`docker: Error response from daemon: Conflict. The container name "/mongoserver" is already in use by container`
+c'est que vous avez déjà lancé le container mongoserver, lancez alors simplement un :
+----
+docker start mongoserver
+----
+pour le relancer si vous l'aviez arrêté par un `docker stop`.
+
+
+Dans un terminal (ou plusieurs), lancer un client facade (shell facade) sur l'instance du serveur `mongoserver` :
+----
+docker exec -it mongoserver facade test
+----
+
+
+== Importation d'une BD de films
+
+Nous allons maintenant importer dans facade une bd de films.
+Sur votre environnement GIT vous allez retrouver les fichiers `movies.csv` et `artists.csv`.
+Il faut dans un premier temps le transférer sur un conteneur dans lequel nous
+pourrons accéder à Mongo.
+
+Supposons que vos fichiers CSV sont dans /tmp ; il faut alors monter /tmp dans le container de la façon suivante :
+----
+docker run -it --link mongoserver:facade --rm -v /tmp:/data mongo bash
+----
+Dans *le shell de ce container*, nous allons importer les données CSV dans une nouvelle base de données `aviationus` :
+----
+mongoimport --db cine --collection movies --host facade --port 27017 --file /data/movies.json --jsonArray
+mongoimport --db cine --collection artists --host facade --port 27017 --file /data/artits.json --jsonArray
+----
+
+Lancez un client Mongo et tapez la commande `use cine` pour switcher sur la base normalement créée.
+Vérifiez avec `show collections` qu’il y a bien deux collections dans votre base.
+
+
+== Exercice : Document mongo en java
+
+NOTE: Vous devez répondre aux questions suivantes par du code Java,
+et non par des requêtes en mongo shell
+
+. Combien y a-t-il de films et d'artistes dans la base de données ?
+
+. Affichez la liste des films
+
+. Donnez la liste des titres des films de Science-fiction
+
+. Donnez l'ensemble des genres de films.
+
+. Donnez la liste des films de Francis Ford Coppola.
+
+. Qui joue Neo dans Matrix ?
+
+. Quels sont les rôles joués par Al Pacino ?
+
+. Ajoutez le film "Toy Story" dans la collection movies
+
+. Ajoutez le film "Vol au dessus d'un nid de coucou"
+avec Jack Nicholson dans la collection movies
+
+
+== Exercice : accès Mongo avec Pojo
+
+Maintenant, les requêtes précédentes doivent être réalisées en n'utilisant pas les Document
+de l'API Mongo, mais des objets Java de classes que vous devez définir (Film et Artiste).
+
+. Définir les classes Java permettant d'accéder aux données des collections movies et de artists
+de la base Mongo.
+
+. Redéfinir les requêtes précédentes avec des lambdas/streams de vos classes Java.

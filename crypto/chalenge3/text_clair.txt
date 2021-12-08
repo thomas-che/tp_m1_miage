@@ -1,0 +1,22 @@
+Bon vous avez déjà bien compris comment extraire ce message, ce qui est très bien.
+Maintenant il vous reste la deuxième partie que vous avez déjà rencontrée deux fois : une fois en TD avec une
+histoire de mots de passe, et un autre fois en TP avec deux messages entrelacés.
+
+
+En résumé, les deux fichiers ctr-1 et ctr-2 sont tous deux issus d'un chiffrement ctr dans la même configuration
+de départ. L'un des deux chiffrements n'est nul autre que le chiffrement de image-defi.png.
+Et il s'avère que l'autre fichier est aussi un chiffrement d'une image png.
+
+A vous de jouer pour retrouver cette image.
+
+
+Evidemment, les choses ne vont pas s'arrêter là. Cette image vous donnera la correction d'un exercice de TP
+réputé pour avoir posé pas mal de problèmes aux étudiants.
+Mais une autre correction est disponible dans l'image extraite !
+
+Pour ceci rien de plus simple. Un serpent est enroulé dans le sens horaire sur le périmètre de l'image.
+A l'extrémité nord, on l'aurait vu dans du bleu. Alors qu'à l'extrémité Est, on dit qu'il est dans le rouge.
+A l'extrémité Sud, on est d'accord avec le nord. Mais finalement, à l'extrémité Ouest, on est comme à l'est.
+Tout ce que l'on sait, c'est qu'à chaque fois, uniquement les bits de poids faible ont été modifiés
+
+Saurez vous le débusquer ?

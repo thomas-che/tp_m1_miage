@@ -5,7 +5,7 @@
 ## ACP donnees Menages
 
 # (1) DONNEES
-men <- read.table("/home/thomas/Documents/tp_m1_miage/add/tp3/menages.txt", header=TRUE)
+men <- read.table("Menages.txt", header=TRUE)
 
 head(men)
 
@@ -113,7 +113,6 @@ title("ACP non normée")
 #    barycentres/classes avec s.class
 # cf TP2  
 # la fonction s.class ne donne pas les labels individus
-par(mfrow=c(1,1))
 plot(acp$li$Axis1, acp$li$Axis2, type="n",
      xlab = "Axe principal  1", ylab = "Axe principal 2")
 text(acp$li$Axis1, acp$li$Axis2, row.names(men2), 

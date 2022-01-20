@@ -29,7 +29,7 @@ def decryptCaesar(msg, decallage):
 	for letter in msg:
 		code = ord(letter)
 		if(code >= 65 and code <= 90):
-			code -= decallage
+			code += decallage
 			if(code < 65):
 				code = 90 - (64 - code)
 			newMsg += chr(code)
@@ -41,11 +41,11 @@ def decryptCaesar(msg, decallage):
 
 def test():
 	# Caesar
-	message = 'Il Ã©tait un petit navire.'
-	enc_message = ''
+	message = "Bateau, sur l'eau, la rivière, la rivière..."
+	enc_message = "Zyrcys, qsp j'cys, jy pgtgèpc, jy pgtgèpc..."
 
 	enc_message = encryptCaesar(message, 1)
-	print(enc_message)
+	print("enc = "+enc_message)
 
 	message = decryptCaesar(enc_message, 1)
 	print(message)

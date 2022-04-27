@@ -1,0 +1,38 @@
+= Gestion d'achats en ligne (15 points)
+
+
+Vous avez été recruté dans la cellule qualité
+d'une société de service. Le client vous a demandé
+de gérer la gestion de multiples paniers pour des clients.
+Vous devez valider le code de la classe *GestionAchatEnLigneImpl*.
+Cette classe encapsule un SI de clients ainsi
+qu'un catalogue d'articles gérant des stocks.
+
+La classe permet de :
+
+. Créer un nouveau panier
+. De récupérer un panier pour un client donné
+. Ajouter un article dans un panier
+. Annuler un panier
+
+== Validation structurelle (7,5 points)
+
+Vous avez suivi une formation en béton armé en test et qualité et vous devez apporter votre expertise.
+Vous soumettez l'idée d'isoler les fonctions à tester par rapport au reste du monde. Donc le mocking partiel est parfait dans
+cette situation.
+
+. Il s'avère que le code n'est pas parfaitement adapté au mocking partiel. Expliquez en quoi le code n'est pas prêt
+dans l'état pour le mocking partiel. Placez vos recommandations ci-dessous dans le README. Modifiez le code en fonction de vos
+recommandations.
+    * Recommandation 1:
+    * Recommandation 2 :
+    * ...
+.  Faites le test complet de la classe pour viser la couverture 100% concernant le critère tous-les-arcs.
+
+== Validation fonctionnelle (7,5 points)
+
+Vous n'êtes pas l'abris que cette la classe *GestionAchatEnLigneImpl* ne soit pas la version finale.
+On vous demande de mettre en place du test fonctionnel à partir de l'interface *GestionAchatEnLigne* pour valider les futurs implémentations de cette interface.
+
+
+. Ecrire tous les tests fonctionnels que vous pensez pertinents. Nous sommes ici sur du test fonctionnel à vocation test d'intégration. Appliquez la méthode vue en cours pour le test d'intégration.

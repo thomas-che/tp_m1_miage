@@ -1,0 +1,12 @@
+= Question de cours (5 pts)
+
+
+Vous êtes un crack en mocking sous toutes ses formes.
+Ce n'est par contre pas le cas de votre collègue.
+Faites lui un résumé court et clair sur le mocking de façon général.
+A la fin de votre résumé, votre collègue doit avoir une vision précise du mocking
+et doit être capable de différencier les deux types de mocking : partiel et full.
+
+Si votre résumé est parfait, il sera susceptible d'intégrer les slides du cours en question. Il est important que
+cela soit personnel et non un copier/coller d'une source que je connaîtrais bien.
+

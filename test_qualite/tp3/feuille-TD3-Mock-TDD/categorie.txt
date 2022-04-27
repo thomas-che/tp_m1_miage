@@ -1,0 +1,6 @@
+public class categorie {
+
+    public int valCategorie(int an) {
+  	return 0;
+    }
+}
